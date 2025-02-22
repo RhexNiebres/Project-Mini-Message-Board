@@ -1,5 +1,10 @@
 <html>
   <body>
     <%- include('navbar', {links: links}) %>
+    <h1>messages here</h1>
+    <ul>
+      <% messages.forEach((message) => { %> <%- include('message/messages', {
+      message: message }); %> <% }); %>
+    </ul>
   </body>
 </html>
