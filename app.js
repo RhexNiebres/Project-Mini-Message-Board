@@ -6,6 +6,7 @@ require("dotenv").config();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 const links = [
   { href: "/", text: "messages" },
@@ -26,22 +27,19 @@ const messages = [
 ];
 
 app.get("/", (req, res) => {
-  res.render("index", { links: links, messages: messages });
+  const sortedMessages = messages.sort((a, b) => b.added - a.added); //sort messages from recent to old messages
+  res.render("index", { links: links, messages: sortedMessages });
 });
+
 app.get("/new", (req, res) => {
   res.render("form", { links: links });
 });
 
 app.post("/new", (req, res) => {
-    const { messageText, messageUser } = req.body; // remember to match input name attributes
-  
-    if (!messageText || !messageUser) {
-      return res.render("form", { links, error: "All fields are required!" });
-    }
-  
-    messages.push({ text: messageText, user: messageUser, added: new Date() });
-    res.redirect("/");
-  });
+  const { messageText, messageUser } = req.body; // remember to match input name attribute
+  messages.push({ text: messageText, user: messageUser, added: new Date() });
+  return res.redirect("/");
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
