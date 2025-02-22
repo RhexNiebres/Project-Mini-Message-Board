@@ -14,13 +14,13 @@ const links = [
 
 const messages = [
   {
-    text: "Hi there!",
-    user: "Amando",
+    text: "Wakey wakey!",
+    user: "Sung Jin-woo",
     added: new Date(),
   },
   {
-    text: "Hello World!",
-    user: "Charles",
+    text: "The World!",
+    user: "Dio Brando",
     added: new Date(),
   },
 ];
