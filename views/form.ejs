@@ -1,15 +1,36 @@
 <html>
+  <head>
+    <link href="/output.css" rel="stylesheet" />
+  </head>
   <body>
     <%- include('navbar', {links: links}) %>
-    <form method="POST" action="/new">
-
-      <label for="messageUser">Name:</label>
-      <input type="text" id="messageUser" name="messageUser" />
+    <form
+      method="POST"
+      action="/new"
+      class="bg-blue-500 text-black p-4 flex flex-col"
+    >
+      <label class="bg-white w-20 rounded-t-lg" for="messageUser">Name:</label>
+      <input
+        class="rounded-b-lg w-40"
+        type="text"
+        id="messageUser"
+        name="messageUser"
+        required
+      />
 
       <label for="messageText">Message</label>
-      <input type="text" id="messageText" name="messageText" />
+      <textarea
+        name="messageText"
+        class="rounded-t-lg"
+        rows="3"
+        type="text"
+        id="messageText"
+        required
+      ></textarea>
 
-      <button type="submit">Add message</button>
+      <button class="bg-white rounded-b-lg  p-3 w-32 " type="submit">
+        Add Message
+      </button>
     </form>
   </body>
 </html>
