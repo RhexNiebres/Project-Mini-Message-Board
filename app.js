@@ -57,5 +57,5 @@ app.listen(port, () => {
 });
 
 app.use((req, res) => {
-  res.status(404).render("404", { message: "Page not found!" });
+  res.status(404).render("CustomError", { message: "Page not found!" });
 });
