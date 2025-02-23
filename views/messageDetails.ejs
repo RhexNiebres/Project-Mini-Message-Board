@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link href="/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <%- include('navbar', {links: links}) %>
+
+    <div class="p-10 bg-gray-100 rounded">
+      <h1 class="text-2xl font-bold"><%= message.user %></h1>
+      <p class="text-3xl"><%= message.text %></p>
+      <p class="text-sm text-gray-600 text-right">
+        Added: <%= message.added.toLocaleString() %>
+      </p>
+    </div>
+    <div class="flex justify-end text-white bg-blue-500 py-2 px-4 w-20">
+      <a href="/">Back to Messages</a>
+    </div>
+  </body>
+</html>
