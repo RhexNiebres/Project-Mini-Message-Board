@@ -56,7 +56,6 @@ app.listen(port, () => {
   console.log(`listening on port ${port}!`);
 });
 
-app.use((req, res, next) => {
-  throw new Error("OH NO! this page does not exist");
-  // or next(new Error("OH NO!"));
+app.use((req, res) => {
+  res.status(404).render("404", { message: "Page not found!" });
 });
