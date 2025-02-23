@@ -36,9 +36,19 @@ app.get("/new", (req, res) => {
 });
 
 app.post("/new", (req, res) => {
-  const { messageText, messageUser } = req.body; // remember to match input name attribute
+  const { messageText, messageUser } = req.body; // remember to match input name attributes!!
   messages.push({ text: messageText, user: messageUser, added: new Date() });
   return res.redirect("/");
+});
+
+app.get("/message-details/:id", (req, res) => {
+  const messageId = parseInt(req.params.id, 10);
+  const message = messages[messageId];
+
+  if (!message) {
+    return res.status(404).send("Message not found");
+  }
+  res.render("messageDetails", { links: links, message: message });
 });
 
 const port = process.env.PORT || 3000;
