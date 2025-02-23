@@ -1,10 +1,15 @@
 <html>
+  <head>
+    <link href="/output.css" rel="stylesheet" />
+  </head>
   <body>
     <%- include('navbar', {links: links}) %>
-    <h1>messages here</h1>
-    <ul>
-      <% messages.forEach((message) => { %> <%- include('message/messages', {
-      message: message }); %> <% }); %>
+    <h1 class="text-center text-3xl p-7">messages here</h1>
+    <ul class="p-10 bg-gray-100 flex-col space-y-4">
+      <% messages.forEach((message, index) => { %> <%-
+      include('message/messages', { message: message }); %>
+      <a class="text-white rounded-md p-3 bg-blue-400 hover:bg-blue-600 " href="/message-details/<%= index %>">Open</a>
+      <% }); %>
     </ul>
   </body>
 </html>
