@@ -1,8 +1,14 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="/output.css" />
+  </head>
   <body>
-    <li>
+    <li class="bg-blue-500 p-4 border border-gray-500 rounded text-white">
       <strong> <%= message.user %> </strong>
-      <%= message.text %> (Added: <%= message.added.toLocaleString()%>)
+      <p>Message: <%= message.text ? message.text : "No text available" %></p>
+      <div class="flex justify-end">
+        <p class="">(Added: <%= message.added.toLocaleString() %>)</p>
+      </div>
     </li>
   </body>
 </html>
