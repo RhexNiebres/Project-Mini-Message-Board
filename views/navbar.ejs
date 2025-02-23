@@ -1,11 +1,18 @@
 <html>
+  <head>
+    <link href="/css/output.css" rel="stylesheet" />
+  </head>
   <body>
-    <nav>
-      <ul>
+    <nav class="bg-blue-500 text-sky-400 p-7">
+      <ul class="flex flex-row space-x-3">
         <% for (let i = 0; i < links.length; i++) { %>
-        <li>
+        <li class="">
           <a href="<%= links[i].href %>">
-            <span> <%= links[i].text %> </span>
+            <span
+              class="bg-blue-500 hover:bg-blue-600 hover:text-white rounded-md border border-white text-white p-2"
+            >
+              <%= links[i].text %>
+            </span>
           </a>
         </li>
         <% } %>
