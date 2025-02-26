@@ -51,7 +51,7 @@ app.get("/message-details/:id", (req, res) => {
   res.render("messageDetails", { links: links, message: message });
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`listening on port ${port}!`);
 });
