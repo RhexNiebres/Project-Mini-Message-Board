@@ -24,6 +24,16 @@ const messages = [
     user: "Dio Brando",
     added: new Date(),
   },
+  {
+    text:"Hello I'm spongebob!", 
+    user:"Spongebob SquarePants", 
+    added: new Date(), 
+  },
+  {
+    text:"Imagination is more important than knowledge", 
+    user:"Albert Einstein",
+    added: new Date(), 
+  }, 
 ];
 
 app.get("/", (req, res) => {
