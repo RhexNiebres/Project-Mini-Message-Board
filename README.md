@@ -1,3 +1,7 @@
-This is a simple message board 
-where you can add your own username and messages
-have fun! 
+# Simple Message Board  
+
+Welcome to the **Simple Message Board**!  
+
+- Add your username and post messages.  
+- View messages from others.  
+- Enjoy a fun and interactive experience! 
